@@ -1,13 +1,14 @@
 
-from connect4 import *
+from connect5 import *
 from random import shuffle
+from A20368154 import *
 from A123456 import *
 
 def main():
     """ Play a tournament!
     """
     
-    allPlayers = [A123456(),
+    allPlayers = [A20368154(),
                   AIPlayer("Dos","o",1),
                   AIPlayer("Tres","o",2),
                   AIPlayer("Quatro","o",3),

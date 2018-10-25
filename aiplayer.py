@@ -10,6 +10,8 @@ class Minimax(object):
     
     board = None
     colors = ["x", "o"]
+    """x is max, o is min
+    """
     
     def __init__(self, board):
         # copy the board to self.board
@@ -45,6 +47,7 @@ class Minimax(object):
                 best_move = move
         
         return best_move, best_alpha
+
         
     def search(self, depth, state, curr_player):
         """ Searches the tree at depth 'depth'
@@ -79,7 +82,9 @@ class Minimax(object):
             if child == None:
                 print("child == None (search)")
             alpha = max(alpha, -self.search(depth-1, child, opp_player))
-        return alpha
+        return alpha      
+
+
 
     def isLegalMove(self, column, state):
         """ Boolean function to check if a move (column) is a legal move
@@ -239,4 +244,5 @@ class AIPlayer(Player):
         
         m = Minimax(state)
         best_move, value = m.bestMove(self.difficulty, state, self.color)
+        print(value)
         return best_move
